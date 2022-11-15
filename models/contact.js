@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-const BlogSchema= new mongoose.Schema({
+const ContactSchema= new mongoose.Schema({
     title:{
         type:string,
         required:true,
@@ -8,16 +8,13 @@ const BlogSchema= new mongoose.Schema({
         type:string,
         required:true,
     },
-    map:{
-       type:string,
-       required:true,
-    },
-    image:{
+    
+    icon:{
         type:string,
         required:true,
     },
    
 });
-const contact= mongoose.model("contact", contactSchema);
+const Contact= mongoose.model("Contact", ContactSchema);
 
-module.exports= contact;
+module.exports= Contact;

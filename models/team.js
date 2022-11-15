@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-const teamSchema= new mongoose.Schema({
+const TeamSchema= new mongoose.Schema({
     name:{
         type:string,
         required:true,
@@ -32,6 +32,6 @@ const teamSchema= new mongoose.Schema({
 
     },
 });
-const team= mongoose.model("team", teamSchema);
+const Team= mongoose.model("Team", TeamSchema);
 
-module.exports= team;
+module.exports= Team;
