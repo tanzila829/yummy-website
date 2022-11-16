@@ -1,33 +1,33 @@
 const mongoose=require("mongoose");
 const TeamSchema= new mongoose.Schema({
     name:{
-        type:string,
+        type:"string",
         required:true,
     },
     designation:{
-        type:string,
+        type:"string",
         required:true,
     },
     image:{
-       type:string,
+       type:"string",
        required:false,
     },
     facebook:{
-        type:string,
+        type:"string",
         required:false,
     },
     twiter:{
-        type:string,
+        type:"string",
         required:false,
 
     },
     instragram:{
-        type:string,
+        type:"string",
         required:false,
 
     },
     linkedIn:{
-        type:string,
+        type:"string",
         required:false,
 
     },

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const DashboardController = require('../controller/DashboardController');
 const blogController = require('../controller/blogController');
 const contactController=require('../controller/contactController');
 const teamController=require('../controller/teamController');
@@ -12,8 +13,9 @@ const testimonial=require('../validator/testimonial');
 
 
 
-/* GET blog page. */
-router.get('/', blogController.admin);
+/* GET dashboard page. */
+router.get('/', DashboardController.admin);
+//blog page 
 router.get('/blog', blogController.blog);
 router.get('/blog/create', blogController.create);
 router.get('/blog/:id/edit', blogController.edit);
@@ -24,7 +26,7 @@ router.put('/blog/:id/update', blogController.update);
 
 
 //contactpage
-router.get('/', contactController.admin);
+// router.get('/', contactController.admin);
 router.get('/contact', contactController.contact);
 router.get('/contact/create', contactController.create);
 router.get('/contact/:id/edit', contactController.edit);
@@ -35,7 +37,7 @@ router.put('/contact/:id/update', contactController.update);
 
 
 //teampage
-router.get('/', teamController.admin);
+// router.get('/', teamController.admin);
 router.get('/team', teamController.team);
 router.get('/team/create', teamController.create);
 router.get('/team/:id/edit', teamController.edit);
@@ -47,7 +49,7 @@ router.put('/team/:id/update', teamController.update);
 
 
 //testmonialpage
-router.get('/', testimonialController.admin);
+// router.get('/', testimonialController.admin);
 router.get('/testimonial', testimonialController.testimonial);
 router.get('/testimonial/create', testimonialController.create);
 router.get('/testimonial/:id/edit', testimonialController.edit);
@@ -58,7 +60,7 @@ router.put('/testimonial/:id/update', testimonialController.update);
 
 
 //linkpage
-router.get('/', linkController.admin);
+// router.get('/', linkController.admin);
 router.get('/link', linkController.link);
 router.get('/link/create', linkController.create);
 router.get('/link/:id/edit', linkController.edit);

@@ -4,9 +4,9 @@ module.exports={
 
 //testimonial controller
 
-admin: (req, res, next) =>{
-res.render('backend/index', { title: 'admin', layout: 'backend/layout' })
-},
+// admin: (req, res, next) =>{
+// res.render('backend/index', { title: 'admin', layout: 'backend/layout' })
+// },
 
 testimonial: (req, res, next) =>{
 res.render('backend/index', { title: 'List of Testimonial', layout: 'backend/layout' })

@@ -4,9 +4,9 @@ module.exports={
 
 //contact-us controller
 
-admin: (req, res, next) =>{
-res.render('backend/index', { title: 'admin', layout: 'backend/layout' })
-},
+// admin: (req, res, next) =>{
+// res.render('backend/index', { title: 'admin', layout: 'backend/layout' })
+// },
 
 
 
@@ -37,7 +37,7 @@ store: (req, res, next)=> {
 
     return res.json(req.body);
   //    res.render('index', { layout: 'backend/layout', });
-   },
+  },
 
 update: (req, res, next) =>{
 res.render('index', { title: 'update', layout: 'backend/layout' })
