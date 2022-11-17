@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-
+const ContactModel=require('../models/Contact');
 module.exports={
 
 //contact-us controller
@@ -11,7 +11,14 @@ module.exports={
 
 
 contact: (req, res, next) =>{
-res.render('backend/index', { title: 'contact', layout: 'backend/layout' })
+  ContactModel.find((err,docs)=>{
+    if(err){
+        return res.json({error:"Something went wrong!"+err})
+    }
+    return res.json({contact:docs});
+});
+
+res.render('backend/contact/index', { title: 'contact', layout: 'backend/layout' })
 },
 
 create: (req, res, next) =>{
@@ -28,16 +35,28 @@ res.render('index', { title: 'delete', layout: 'backend/layout' })
 show: (req, res, next) =>{
 res.render('index', { title: 'show', layout: 'backend/layout' })
 },
-
 store: (req, res, next)=> {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.json({error:errors.mapped()});
-    }
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.json({error:errors.mapped()});
+  }
 
-    return res.json(req.body);
-  //    res.render('index', { layout: 'backend/layout', });
-  },
+// return res.json(req.body);
+
+const contact=new ContactModel({
+  title:req.body.title,
+  details:req.body.details,
+  icon:req.body.icon
+});
+
+contact.save((err,newContact)=>{
+  if(err){
+    return res.json({error:"Something went wrong!"+err})
+  }
+  return res.json({contact:newContact});
+});
+
+},
 
 update: (req, res, next) =>{
 res.render('index', { title: 'update', layout: 'backend/layout' })

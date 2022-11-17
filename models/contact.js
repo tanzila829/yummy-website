@@ -1,16 +1,16 @@
 const mongoose=require("mongoose");
 const ContactSchema= new mongoose.Schema({
     title:{
-        type:string,
+        type:"string",
         required:true,
     },
     details:{
-        type:string,
+        type:"string",
         required:true,
     },
     
     icon:{
-        type:string,
+        type:"string",
         required:true,
     },
    

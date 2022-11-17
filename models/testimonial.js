@@ -1,22 +1,22 @@
 const mongoose=require("mongoose");
-const testimonialsSchema= new mongoose.Schema({
+const TestimonialsSchema= new mongoose.Schema({
     name:{
-        type:string,
+        type:"string",
         required:true,
     },
     details:{
-        type:string,
+        type:"string",
         required:true,
     },
     image:{
-       type:string,
+       type:"string",
        required:false,
     },
     designation:{
-        type:string,
+        type:"string",
         required:true,
     },
 });
-const testimonials= mongoose.model("testimonials", testimonialsSchema);
+const Testimonials= mongoose.model("Testimonials", TestimonialsSchema);
 
-module.exports= testimonials;
+module.exports= Testimonials;

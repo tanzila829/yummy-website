@@ -19,7 +19,7 @@ module.exports={
     });
     
 
-        res.render('backend/index', { title: 'Blog', layout: 'backend/layout'})
+        res.render('backend/blog/index', { title: 'Blog', layout: 'backend/layout'})
     
 },
 

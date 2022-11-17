@@ -16,7 +16,7 @@ team: (req, res, next) =>{
             return res.json({team:docs});
     });
 
-  res.render('backend/index', { title: 'team', layout: 'backend/layout' })
+  res.render('backend/team/index', { title: 'team', layout: 'backend/layout' })
   },
 
 create: (req, res, next) =>{
