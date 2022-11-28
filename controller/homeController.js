@@ -39,6 +39,11 @@ module.exports={
         
 
     },
+    // about: (req, res, next) =>{
+    //     res.render('frontend/about', { title: 'about' })
+        
+
+    // },
 }
     
     

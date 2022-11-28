@@ -3,8 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var {engine}=require('express-handlebars')
-const mongoos=require('mongoose')
+var {engine}=require('express-handlebars');
+const mongoose=require('mongoose');
+const fileUpload = require('express-fileupload');
 
 require('dotenv').config()
 const DATABASE_URL=process.env.DATABASE_URL
@@ -19,6 +20,7 @@ var adminRouter = require('./routes/admin');
 
 
 var app = express();
+app.use(fileUpload());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,13 +1,17 @@
 const { check } = require('express-validator');
 
 exports.store=[
-    check('icon', "Invalid icon").not().isEmpty().trim(),
-    check('title', "Invalid title").not().isEmpty().trim(),
-    check('details', "Invalid details").not().isEmpty().trim()
+    check('facebook', "Invalid facebook").not().isEmpty().trim(),
+    check('twiter', "Invalid twiter").not().isEmpty().trim(),
+    check('instragram', "Invalid instragram").not().isEmpty().trim(),
+    check('linkedin', "Invalid linkedin").not().isEmpty().trim(),
 ]
 
 exports.update=[
-    check('icon', "Invalid icon").not().isEmpty().trim(),
-    check('title', "Invalid title").not().isEmpty().trim(),
-    check('details', "Invalid details").not().isEmpty().trim()
+    check('facebook', "Invalid facebook").not().isEmpty().trim(),
+    check('twiter', "Invalid twiter").not().isEmpty().trim(),
+    check('instragram', "Invalid instragram").not().isEmpty().trim(),
+    check('linkedin', "Invalid linkedin").not().isEmpty().trim(),
+
+    
 ];

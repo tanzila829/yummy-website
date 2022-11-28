@@ -15,6 +15,14 @@ contact: (req, res, next) =>{
     if(err){
         return res.json({error:"Something went wrong!"+err})
     }
+    const contact=[];
+    docs.forEach(element=>{
+        contact.push({
+            title:element.title,
+            details:element.details,
+            id:element._id
+        })
+    })
     return res.json({contact:docs});
 });
 

@@ -1,23 +1,20 @@
 const mongoose=require("mongoose");
-const aboutSchema= new mongoose.Schema({
+const AboutSchema= new mongoose.Schema({
     title:{
-        type:string,
+        type:"string",
         required:true,
     },
     details:{
-        type:string,
+        type:"string",
          required:true,
     },
-    map:{
-        type:string,
-        required:true
-    },
+
     image:{
-       type:string,
+       type:"string",
        required:false,
     },
    
 });
-const about= mongoose.model("about", aboutSchema);
+const About= mongoose.model("About", AboutSchema);
 
-module.exports= about;
+module.exports= About;

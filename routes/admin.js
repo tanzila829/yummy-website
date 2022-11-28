@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const DashboardController = require('../controller/DashboardController');
 const blogController = require('../controller/blogController');
+const aboutController = require('../controller/aboutController');
 const contactController=require('../controller/contactController');
 const teamController=require('../controller/teamController');
 const testimonialController=require('../controller/testimonialController');
@@ -10,6 +11,7 @@ const blog=require('../validator/blog');
 const contact=require('../validator/contact');
 const team=require('../validator/team');
 const testimonial=require('../validator/testimonial');
+const link=require('../validator/link');
 
 
 
@@ -68,6 +70,19 @@ router.delete('/link/:id/delete', linkController.delete);
 router.get('/link/:id/show', linkController.show);
 router.post('/link/:id/store',linkController.store);
 router.put('/link/:id/update', linkController.update);
+
+
+
+//aboutpage
+router.get('/about', aboutController.about);
+router.get('/about/create', aboutController.create);
+router.get('/about/:id/edit', aboutController.edit);
+router.delete('/about/:id/delete', aboutController.delete);
+router.get('/about/:id/show', aboutController.show);
+router.post('/about/:id/store',aboutController.store);
+router.put('/about/:id/update', aboutController.update);
+
+
 
 
 
