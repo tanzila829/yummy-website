@@ -4,20 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var {engine}=require('express-handlebars');
-const mongoose=require('mongoose');
+// const mongoose=require('mongoose');
 const fileUpload = require('express-fileupload');
 
-require('dotenv').config()
-const DATABASE_URL=process.env.DATABASE_URL
+// require('dotenv').config()
+// const DATABASE_URL=process.env.DATABASE_URL
 
 
-const connectDB=require('./config/connectdb.js')
-connectDB(DATABASE_URL)
+// const connectDB=require('./config/connectdb.js')
+// connectDB(DATABASE_URL)
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
-
+require('./config/database');
 
 var app = express();
 app.use(fileUpload());
@@ -61,5 +61,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port`)
+})
 module.exports = app;

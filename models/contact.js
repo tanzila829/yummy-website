@@ -9,7 +9,7 @@ const ContactSchema= new mongoose.Schema({
         required:true,
     },
     
-    icon:{
+    image:{
         type:"string",
         required:true,
     },

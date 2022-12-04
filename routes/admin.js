@@ -21,10 +21,10 @@ router.get('/', DashboardController.admin);
 router.get('/blog', blogController.blog);
 router.get('/blog/create', blogController.create);
 router.get('/blog/:id/edit', blogController.edit);
-router.delete('/blog/:id/delete', blogController.delete);
+router.get('/blog/:id/delete', blogController.delete);
 router.get('/blog/:id/show', blogController.show);
 router.post('/blog/store', blog.store, blogController.store);
-router.put('/blog/:id/update', blogController.update);
+router.post('/blog/:id/update', blogController.update);
 
 
 //contactpage

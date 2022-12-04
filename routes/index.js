@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const {menus}=require("../middleware/menuMiddleware");
+router.use(menus);
+
 const homeController=require('../controller/homeController');
+
 
 
 /* GET home page. */

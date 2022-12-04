@@ -3,7 +3,7 @@ const { check } = require('express-validator');
 exports.store=[
     check('name', "Invalid name").not().isEmpty().trim(),
     check('designation', "Invalid designation").not().isEmpty().trim(),
-    check('image', "Invalid Image").not().isEmpty().trim(),
+    check('image', "Invalid Image"),
     check('facebook', "Invalid facebook").not().isEmpty().trim(),
     check('twiter', "Invalid twiter").not().isEmpty().trim(),
     check('instragram', "Invalid instragram").not().isEmpty().trim(),
@@ -13,7 +13,7 @@ exports.store=[
 exports.update=[
     check('name', "Invalid name").not().isEmpty().trim(),
     check('designation', "Invalid designation").not().isEmpty().trim(),
-    check('image', "Invalid Image").not().isEmpty().trim(),
+    check('image', "Invalid Image"),
     check('facebook', "Invalid facebook").not().isEmpty().trim(),
     check('twiter', "Invalid twiter").not().isEmpty().trim(),
     check('instragram', "Invalid instragram").not().isEmpty().trim(),

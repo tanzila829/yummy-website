@@ -1,34 +1,29 @@
 const { validationResult } = require('express-validator');
 const ContactModel=require('../models/Contact');
+// const fs = require("fs");
 module.exports={
-
-//contact-us controller
-
-// admin: (req, res, next) =>{
-// res.render('backend/index', { title: 'admin', layout: 'backend/layout' })
-// },
 
 
 
 contact: (req, res, next) =>{
-  ContactModel.find((err,docs)=>{
-    if(err){
-        return res.json({error:"Something went wrong!"+err})
+  ContactModel.find((err, docs) => {
+    if (err) {
+        return res.json({ error: "Something went wrong! +err" })
     }
-    const contact=[];
-    docs.forEach(element=>{
+    // return res.json({blogs:docs});
+    const contact = [];
+    docs.forEach(Element => {
         contact.push({
-            title:element.title,
-            details:element.details,
-            id:element._id
+            title: Element.title,
+            details: Element.details,
+            image: Element.image,
+            id: Element._id
         })
     })
-    return res.json({contact:docs});
+    res.render('backend/contact/index', { title: 'contact', layout: "backend/layout", contact: contact })
+
 });
-
-res.render('backend/contact/index', { title: 'contact', layout: 'backend/layout' })
 },
-
 create: (req, res, next) =>{
 res.render('backend/contact/create', { title: 'create', layout: 'backend/layout' })
 },
@@ -40,29 +35,63 @@ res.render('index', { title: 'edit', layout: 'backend/layout' })
 delete: (req, res, next) =>{
 res.render('index', { title: 'delete', layout: 'backend/layout' })
 },
-show: (req, res, next) =>{
-res.render('index', { title: 'show', layout: 'backend/layout' })
+show: (req, res, next) => {
+  //json
+  // res.json({'id':req.params.id});
+  ContactModel.findById(req.params.id)
+      .then((contact) => {
+
+          // blog list
+          const details = {
+              title: contact.title,
+             
+              details: contact.details,
+              image: contact.image
+          }
+          // console.log(details);
+          res.render('backend/contact/show', { title: 'contact', layout: "backend/layout", contact: details });
+      })
+      
 },
-store: (req, res, next)=> {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.json({error:errors.mapped()});
-  }
+store: (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.json({ error: errors.mapped() });
+    }
+    let ssampleFile;
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
 
-// return res.json(req.body);
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    ssampleFile = req.files.image;
+    let rnd = new Date().valueOf();
+    let ffilePath = 'upload/' + rnd + ssampleFile.name;
 
-const contact=new ContactModel({
-  title:req.body.title,
-  details:req.body.details,
-  icon:req.body.icon
-});
+    // Use the mv() method to place the file somewhere on your server
+    ssampleFile.mv('public/' + ffilePath, function (err) {
+        if (err)
+            return res.status(500).send(err);
+        res.send('File uploaded!');
+    });
 
-contact.save((err,newContact)=>{
-  if(err){
-    return res.json({error:"Something went wrong!"+err})
-  }
-  return res.json({contact:newContact});
-});
+
+    // return res.json(req.body);
+
+    const contact= new ContactModel({
+        title: req.body.title,
+       
+        details: req.body.details,
+        image: filePath
+    });
+
+    contact.save((err, newContact) => {
+        if (err) {
+            return res.json({ error: "Something went wrong!" + err })
+        }
+        return res.json({ contact: newContact });
+    });
+
 
 },
 
