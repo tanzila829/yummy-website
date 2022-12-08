@@ -16,25 +16,25 @@
               <h5 class="card-title">Floating labels Form</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method="POST" action="/admin/testimonial/store">
+              <form class="row g-3" method="POST" action="/admin/testimonial/store" encType="multipart/form-data">
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Name" name="Name">
-                    <label for="floatingName">Name</label>
+                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="name" name="name">
+                    <label for="floatingName">name</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Designation" name="designation">
-                    <label for="floatingName">Designation</label>
+                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="details" name="details">
+                    <label for="floatingName">details</label>
                   </div>
                 </div>
 
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" ></textarea>
-                    <label for="floatingTextarea">Details</label>
+                    <textarea class="form-control form-control-sm" name="designation" placeholder="Address" id="floatingTextarea" style="height: 100px;" ></textarea>
+                    <label for="floatingTextarea">designation</label>
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -56,14 +56,3 @@
           </div>
     </section>
 </main>
-{{!-- <form action="/admin/testimonial/store" method="POST">
-    <input type="text" name="details"><br>
-    <input type="text" name="image"><br>
-    <input type="text" name="name" ><br><br>
-     <input type="text" name="designation" ><br><br>
-    
-
-    <button type="submit">submit</button>
-
-    
-</form> --}}

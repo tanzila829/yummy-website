@@ -3,7 +3,7 @@ var router = express.Router();
 const {menus}=require("../middleware/menuMiddleware");
 router.use(menus);
 
-const homeController=require('../controller/homeController');
+const homeController=require('../controller/frontendController');
 
 
 

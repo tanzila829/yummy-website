@@ -59,10 +59,10 @@ module.exports = {
             }
             try {
                 fs.unlink("public/" + blog.image, () => {
-                    console.log("File deleted====================================");
+                    console.log("File deleted");
                 });
             } catch (error) {
-                console.log("Something went wrong====================================");
+                console.log("Something went wrong");
             }
 
             // /
@@ -100,11 +100,11 @@ module.exports = {
     store: (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.json({ error: errors.mapped() });
+             res.json({ error: errors.mapped() });
         }
         let sampleFile;
         if (!req.files || Object.keys(req.files).length === 0) {
-            return res.status(400).send('No files were uploaded.');
+             res.status(400).send('No files were uploaded.');
         }
 
         // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
@@ -115,8 +115,8 @@ module.exports = {
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv('public/' + filePath, function (err) {
             if (err)
-                return res.status(500).send(err);
-            res.send('File uploaded!');
+                 res.status(500).send(err);
+            // res.send('File uploaded!');
         });
 
 
@@ -131,9 +131,10 @@ module.exports = {
 
         blog.save((err, newBlog) => {
             if (err) {
-                return res.json({ error: "Something went wrong!" + err })
+                 res.json({ error: "Something went wrong!" + err })
             }
-            return res.json({ blog: newBlog });
+            res.redirect('/admin/blog')
+            // return res.json({ blog: newBlog });
         });
 
 
@@ -145,7 +146,7 @@ module.exports = {
         const errors=validationResult(req);
 
         if(!errors.isEmpty()){
-            return res.json({errors:errors.mapped()});
+             res.json({errors:errors.mapped()});
         }
         let sampleFile,filePath;
 

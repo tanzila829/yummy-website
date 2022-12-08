@@ -5,19 +5,65 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">View</li>
+                <li class="breadcrumb-item active">{{title}}</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-        <form action="/admin/link/store" method="POST">
-            <input type="text" name="facebook" />
-            <input type="text" name="twiter" />
-            <input type="text" name="instragram" />
-            <input type="text" name="linkedin" />
 
-            <button type="submit">Submit</button>
-        </form>
+          <div class="card">
+            <div class="card-body">
+                <a class="btn btn-outline-warning btn-sm float-end my-2" href="/admin/link/create">Create</a>
+
+              <!-- Dark Table -->
+              <table class="table table-dark">
+                <thead>
+                </thead>
+                <tbody>
+                    
+                
+
+                 <tr>
+                        <th>facebook</th>
+                        <td>:</td>
+                        <td>
+                            {{link.facebook}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>twiter</th>
+                        <td>:</td>
+                        <td>
+                            {{link.twiter}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>instragram</th>
+                        <td>:</td>
+                        <td>
+                            {{link.instragram}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>linkedin</th>
+                        <td>:</td>
+                        <td>
+                            {{link.linkedin}}
+                        </td>
+                    </tr>
+
+
+
+                    
+                </tbody>
+              </table>
+              <!-- End Dark Table -->
+
+            </div>
+          </div>
     </section>
 </main>

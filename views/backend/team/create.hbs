@@ -9,22 +9,24 @@
             </ol>
         </nav>
     </div><!-- End Page Title -->
+
     <section class="section dashboard">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Floating labels Form</h5>
-    <!-- Floating Labels Form -->
-<form class="raw g-3" method="POST" action="/admin/team/store" >
-<div class="col-md-6">
+
+              <!-- Floating Labels Form -->
+              <form class="row g-3" method="POST" action="/admin/team/store" encType="multipart/form-data">
+                <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Name" name="Name">
-                    <label for="floatingName">Name</label>
+                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="name" name="name">
+                    <label for="floatingName">name</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="designation" name="designation">
-                    <label for="floatingName">Designation</label>
+                    <label for="floatingName">designation</label>
                   </div>
                 </div>
 
@@ -34,25 +36,36 @@
                     <textarea class="form-control form-control-sm" name="facebook" placeholder="facebook" id="floatingTextarea" style="height: 100px;" ></textarea>
                     <label for="floatingTextarea">facebook</label>
                   </div>
+
                 </div>
+
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control form-control-sm" name="twiter" placeholder="twiter" id="floatingTextarea" style="height: 100px;" ></textarea>
+                    <label for="floatingTextarea">twiter</label>
+                  </div>
+
+                </div>
+
+
                 <div class="col-12">
                   <div class="form-floating">
                     <textarea class="form-control form-control-sm" name="instragram" placeholder="instragram" id="floatingTextarea" style="height: 100px;" ></textarea>
                     <label for="floatingTextarea">instragram</label>
                   </div>
+
                 </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="twitter" placeholder="twitter" id="floatingTextarea" style="height: 100px;" ></textarea>
-                    <label for="floatingTextarea">twitter</label>
-                  </div>
-                </div>
+
+
                 <div class="col-12">
                   <div class="form-floating">
                     <textarea class="form-control form-control-sm" name="linkedin" placeholder="linkedin" id="floatingTextarea" style="height: 100px;" ></textarea>
                     <label for="floatingTextarea">linkedin</label>
                   </div>
+
                 </div>
+
                 <div class="col-md-12">
                   <div class="col-md-12">
                         <label for="floatingCity">Image</label>
@@ -72,12 +85,3 @@
           </div>
     </section>
 </main>
-    {{!-- <input type="text" name="image"> <br><br>
-    <input type="text" name="name"> <br><br>
-    <input type="text" name="designation"> <br><br>
-    <input type="text" name="facebook"> <br><br>
-    <input type="text" name="twitter"> <br><br>
-    <input type="text" name="instagram"> <br><br>
-    <input type="text" name="linkedIn"> <br><br>
-    <button type="submit">Submit</button>
-</form> --}}

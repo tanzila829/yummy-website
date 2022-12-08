@@ -1,13 +1,40 @@
 // const config = require('../config/index')
+// const HomeModel = require('../backendmodels/home');
+const TeamModel = require('../models/team');
+
 
 module.exports={
-    home: (req, res, next) =>{
- 
-        res.render('frontend/index', { title: 'home' })
+    home: (req, res, next) =>  {
+
+         res.render('frontend/home', { title: 'home',  });
+        
     },
+
+   
     
     team: (req, res, next) =>{
-        res.render('frontend/team', { title: 'Meet our team' })
+       
+        TeamModel.find((err, docs) => {
+            if (err) {
+                 res.json({ error: "Something went wrong! +err" })
+            }
+            // return res.json({blogs:docs});
+            const team = [];
+            docs.forEach(Element => {
+                team.push({
+                    name: Element.name,
+                    designation: Element.designation,
+                    image: Element.image,
+                    facebook: Element.facebook,
+                    twiter: Element.twiter,
+                    instragram: Element.instragram,
+                    linkedin: Element.linkedin,
+                    id: Element._id
+                })
+            })
+            res.render('frontend/team', { title: 'team ', team: team })
+
+        });
     },
 
     blog: (req, res, next) =>{

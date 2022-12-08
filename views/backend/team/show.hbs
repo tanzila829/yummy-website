@@ -5,22 +5,86 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">View</li>
+                <li class="breadcrumb-item active">{{title}}</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-        <form action="/admin/team/store" method="POST">
-            <input type="text" name="name" />
-            <input type="text" name="designation" />
-            <input type="file" name="image" />
-                <input type="text" name="facebook" />
-                    <input type="text" name="twiter" />
-                        <input type="text" name="instragram" />
-                            <input type="text" name="linkedin" />
 
-            <button type="submit">Submit</button>
-        </form>
+          <div class="card">
+            <div class="card-body">
+                <a class="btn btn-outline-warning btn-sm float-end my-2" href="/admin/team/create">Create</a>
+
+              <!-- Dark Table -->
+              <table class="table table-dark">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <td>:</td>
+                        <td>
+                            {{team.name}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>designation</th>
+                        <td>:</td>
+                        <td>
+                            {{team.designation}}
+                        </td>
+                    </tr>
+
+                
+
+                 <tr>
+                        <th>facebook</th>
+                        <td>:</td>
+                        <td>
+                            {{team.facebook}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>twiter</th>
+                        <td>:</td>
+                        <td>
+                            {{team.twiter}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>instragram</th>
+                        <td>:</td>
+                        <td>
+                            {{team.instragram}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>linkedin</th>
+                        <td>:</td>
+                        <td>
+                            {{team.linkedin}}
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <th>Image</th>
+                        <td>:</td>
+                        <td>
+                            <img src="/{{team.image}}" width="200px" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+              <!-- End Dark Table -->
+
+            </div>
+          </div>
     </section>
 </main>

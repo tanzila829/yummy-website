@@ -14,7 +14,7 @@ const LinkSchema= new mongoose.Schema({
         required:false,
 
     },
-    linkedIn:{
+    linkedin:{
         type:"string",
         required:false,
 
